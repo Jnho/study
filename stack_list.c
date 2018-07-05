@@ -1,4 +1,4 @@
-#pragma warning(disable:4996)
+
 #include <stdio.h>
 #include<stdlib.h>
 #ifndef __LB_STACK_H__
@@ -19,7 +19,7 @@ typedef struct _listStack {
 }ListStack;
 
 typedef ListStack Stack;
-
+#endif
 void StackInit(Stack *pstack) //스택 초기화
 {
 	pstack->head = NULL;
@@ -84,4 +84,3 @@ int main(void) {
 
 	}
 }
-#endif
