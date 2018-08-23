@@ -2,22 +2,24 @@
 
 #include <stdio.h>
 
-void selection_sort(int *arr) //¼±ÅÃ Á¤·Ä ¾Õ¿¡¼­ ºÎÅÍ ÇÏ³ª¾¿ Á¤·Ä ÇØ³ª°¨
+void selection_sort(int *arr) //ì„ íƒ ì •ë ¬ ì•ì—ì„œ ë¶€í„° í•˜ë‚˜ì”© ì •ë ¬ í•´ë‚˜ê°
 {
 	int i, j;
 	for (i = 0; i < 9; i++) {
+		int min=i;
 		for (j = i+1; j < 10; j++) {
-			if (arr[i] > arr[j]) {
-				int t = arr[i];
-				arr[i] = arr[j];
-				arr[j] = t;
+			if (arr[min] > arr[j]) {
+				min=j;
 			}
 		}
+		int t=arr[min];
+		arr[min]=arr[i];
+		arr[i]=t;
 	}
 	for (i = 0; i < 10; i++) printf("%d ", arr[i]);
 }
 
-void bubble_sort(int arr[]) //¹öºí Á¤·Ä, ÀÎÁ¢ÇÑ µÎ°³ Å©±â ºñ±³·Î Á¤·Ä
+void bubble_sort(int arr[]) //ë²„ë¸” ì •ë ¬, ì¸ì ‘í•œ ë‘ê°œ í¬ê¸° ë¹„êµë¡œ ì •ë ¬
 {
 	int i, j;
 	for (i = 0; i < 9; i++) {
@@ -34,7 +36,7 @@ void bubble_sort(int arr[]) //¹öºí Á¤·Ä, ÀÎÁ¢ÇÑ µÎ°³ Å©±â ºñ±³·Î Á¤·Ä
 	}
 }
 
-void insertion_sort(int arr[]) //key°ª ÇÏ³ª ¼³Á¤, Å°°ª ±âÁØÀ¸·Î Á¤·Ä ÇÏ°í ¸¶Áö¸·¿¡ Å°°ª À§Ä¡ Ã£¾ÆÁÜ
+void insertion_sort(int arr[]) //keyê°’ í•˜ë‚˜ ì„¤ì •, í‚¤ê°’ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬ í•˜ê³  ë§ˆì§€ë§‰ì— í‚¤ê°’ ìœ„ì¹˜ ì°¾ì•„ì¤Œ
 {
 	int i, j,k;
 	for (i = 1; i < 10;i++) {
@@ -50,7 +52,7 @@ void insertion_sort(int arr[]) //key°ª ÇÏ³ª ¼³Á¤, Å°°ª ±âÁØÀ¸·Î Á¤·Ä ÇÏ°í ¸¶Áö¸·
 	for (i = 0; i < 10; i++)printf("%d ", arr[i]);
 }
 
-void quick(int left, int right,int arr[]) //Äü Á¤·Ä, ºĞÇÒ Á¤º¹
+void quick(int left, int right,int arr[]) //í€µ ì •ë ¬, ë¶„í•  ì •ë³µ
 {
 	if (left >= right) return;
 	int r, q, p;
